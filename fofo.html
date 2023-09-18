@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fofo</title>
+    <link rel="stylesheet" href="https://use.typekit.net/akm4qgs.css">
+</head>
+
+<body>
+    <style>
+        body {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(230, 230, 230);
+}
+body .menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body .menu .bread {
+  background-color: rgb(255, 255, 255);
+  border-radius: 500px;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 8px 20px;
+}
+body .menu .bread:hover {
+  scale: 1.03;
+}
+body .menu .bread a {
+  transition: color 0.3s ease;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: #000;
+}
+body .menu .bread a.active {
+  color: rgb(255, 208, 0);
+  font-weight: 600;
+}
+body .menu .bread a:hover {
+  color: rgb(205, 55, 9);
+}
+@media screen and (max-width: 768px) {
+  body .menu .bread {
+    max-width: fit-content;
+  }
+}
+body .inner-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+body .inner-container .parent {
+  width: 100%;
+  padding: 20px 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 210px;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+@media screen and (max-width: 992px) {
+  body .inner-container .parent {
+    padding: 20px 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .inner-container .parent {
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .inner-container .parent {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr repeat(3, 210px);
+  }
+}
+body .inner-container .parent:hover div[class*=div]:not(:hover) {
+  opacity: 0.9;
+}
+body .inner-container .parent .div1 {
+  grid-area: 1/1/3/4;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  body .inner-container .parent .div1 {
+    grid-area: 1/1/3/2;
+  }
+}
+body .inner-container .parent .div1.rec {
+  min-height: 350px;
+}
+@media screen and (max-width: 992px) {
+  body .inner-container .parent .div1.rec {
+    min-height: 60vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .inner-container .parent .div1.rec {
+    min-height: 60vh;
+  }
+}
+body .inner-container .parent .div1 .bread {
+  border: 1px solid black;
+  border-radius: 500px;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 8px 20px;
+}
+@media screen and (max-width: 768px) {
+  body .inner-container .parent .div1 .bread {
+    max-width: fit-content;
+  }
+}
+body .inner-container .parent .div1 .top {
+  font-size: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  body .inner-container .parent .div1 .top {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+body .inner-container .parent .div1 .top a {
+  transition: color 0.3s ease;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: #000;
+}
+body .inner-container .parent .div1 .top a.active {
+  color: rgb(255, 208, 0);
+  font-weight: 600;
+}
+body .inner-container .parent .div1 .top a:hover {
+  color: rgb(205, 55, 9);
+}
+body .inner-container .parent .div1 .header {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 45px;
+  height: fit-content;
+}
+body .inner-container .parent .div1 p.text {
+  font-size: 24px;
+  justify-self: flex-end;
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  body .inner-container .parent .div1 p.text {
+    text-align: center;
+    width: 100%;
+    line-height: 160%;
+  }
+}
+body .inner-container .parent .rec {
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgb(255, 255, 255);
+  transition: ease-in-out 0.2s;
+}
+body .inner-container .parent .rec-header {
+  padding: 30px;
+  font-size: 30px;
+}
+@media screen and (max-width: 992px) {
+  body .inner-container .parent .rec-header {
+    font-size: 27px;
+  }
+}
+body .inner-container .parent .rec:hover {
+  opacity: 1;
+  transform: scale(1.01);
+}
+body .inner-container .parent .rec .number-pay {
+  font-weight: 500;
+  padding: 0px 30px;
+  font-size: 50px;
+}
+@media screen and (max-width: 992px) {
+  body .inner-container .parent .rec .number-pay {
+    font-size: 40px;
+  }
+}
+body .inner-container .parent .rec .number-pay a {
+  transition: color 0.2s ease-in;
+  text-decoration: none;
+  color: black;
+}
+body .inner-container .parent .rec .number-pay a:hover {
+  color: rgb(255, 208, 0);
+}
+body .inner-container .parent .rec .number-pay.active {
+  color: rgb(133, 133, 133);
+}
+
+/*# sourceMappingURL=style.css.map */
+
+    </style>
+
+<div class="menu">
+  <div class="bread">
+      <a href="./afiliados.php">Afiliados</a>
+      /
+      <a href="./pagos.html" class="active">Pagos</a>
+  </div>
+</div>
+
+    <div class="inner-container">
+        <div class="parent">
+          <div class="div1 rec">
+            <div class="top">
+                <div class="header">
+                    Fofo 🥸
+                </div>
+                <div class="bread">
+                    <a href="./fofo.html" class="active">Fofo</a>
+                    /
+                    <a href="./paul.html">Paul</a>
+                    /
+                    <a href="./buzo.html">Buzo</a>
+                    /
+                    <a href="./coque.html">Coque</a>
+                </div>
+            </div>
+            
+
+            <p class="text">
+                Los pagos se emitiran cada final de mes, normalmente será el día 30 del segundo mes de haber cerrado los salarios, el oro se actualizara cada semana el día domingo 🏆.
+            </p>
+          </div>
+          <div class="rec">
+            <div class="rec-header">
+                Julio - Sept
+            </div>
+            <div class="number-pay">
+                $1,290.8
+            </div>
+          </div>
+          <div class="rec">
+            <div class="rec-header">
+                Agosto - Octubre
+            </div>
+            <div class="number-pay">
+                $476.35
+            </div>
+          </div>
+          <div class="rec">
+            <div class="rec-header">
+                Sept - Nov
+            </div>
+            <div class="number-pay active">
+                $19.95
+            </div>
+          </div>
+        </div>
+    <div>
+</body>
+</html>

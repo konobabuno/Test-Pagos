@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos</title>
+    <link rel="stylesheet" href="./afiliados.css">
+    <link rel="stylesheet" href="https://use.typekit.net/akm4qgs.css">
+</head>
+
+<body>
+    <form method="post" target="">
+    <div class="menu">
+        <div class="bread">
+            <a href="./afiliados.html" class="active">Afiliados</a>
+            /
+            <a href="./pagos.html">Pagos</a>
+        </div>
+    </div>
+
+    <div class="inner-container">
+        <div class="parent">
+            <div class="div1 rec">
+                <div class="top">
+                    <div class="header">
+                        Generar link
+                        <div class="badge">Fofo</div>
+                    </div>
+                    <div class="bread">
+                        <a href="afiliados.php?afil=face-rodo-20">Fofo</a>
+                        /
+                        <a href="afiliados.php?afil=face-casta-20">Paul</a>
+                        /
+                        <a href="afiliados.php?afil=face-buzo-20">Buzo</a>
+                        /
+                        <a href="afiliados.php?afil=afilarmada1-20">Coque</a>
+                    </div>
+                </div>
+
+
+                <p class="text">
+                    Selecciona el link en la parte superior y enseguida podras copiar el texto e imágenes.
+                </p>
+            </div>
+            <div class="rec">
+                <div class="rec-header">
+                    ID o URL
+                </div>
+                <input name="asin" type="text" required class="form-control" id="asin"
+                    placeholder="ID o url completa de Amazon" aria-label="ID del producto" value="<?= $asin ?>">
+            </div>
+            <div class="rec">
+                <div class="rec-header">
+                    Precio Anterior
+                </div>
+                <input class="form-control" name="pactual" type="text" id="pactual" required>
+            </div>
+            <div class="rec">
+                <div class="rec-header">
+                    Precio Oferta
+                </div>
+                <input class="form-control" name="poferta" type="text" id="poferta" required>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button type="submit" id="button-addon2">Enviar</button>
+    </div>
+    </form>
+
+    <div class="button-container m-2">
+        <button onclick="copyContent()">Copiar Texto</button>
+    </div>
+</body>
+
+</html>

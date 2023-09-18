@@ -1,0 +1,230 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin media-down($breakpoint) {
+    @media screen and (max-width: map-get($grid-breakpoints, $breakpoint)){
+        @content
+    }
+}
+
+
+
+body {
+    
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(230, 230, 230);
+    .menu{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .bread{
+            background-color: rgb(255, 255, 255);
+            border-radius: 500px;
+            font-size: 20px;
+            margin-top: 15px;
+            padding: 8px 20px;
+
+            &:hover{
+                scale: 1.03;
+            }
+
+            a{
+                transition: color 0.3s ease;
+                padding-left: 5px;
+                padding-right: 5px;
+                text-decoration: none;
+                color: #000;
+
+                &.active{
+                    color: rgb(255, 208, 0);
+                    font-weight: 600;
+                }
+
+                &:hover{
+                    color: rgb(205, 55, 9);
+                }
+            }
+    
+            @include media-down(md){
+                max-width: fit-content;
+            }
+        }
+    }
+    
+
+    .inner-container {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      .parent {
+        width: 100%;
+        padding: 20px 60px;
+        
+        @include media-down(lg){
+            padding: 20px 40px;
+        }
+
+        @include media-down(md){
+            padding: 10px 20px;
+        }
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 210px;
+
+        @include media-down(md){
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr repeat(3,210px);
+        }
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+        &:hover {
+          div[class*="div"]:not(:hover) {
+            opacity: 0.9;
+          }
+        }
+
+  
+        .div1{
+            grid-area: 1/1/3/4;
+
+            @include media-down(md){
+                grid-area: 1/1/3/2;
+            }
+
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &.rec{
+                min-height: 350px;
+
+                @include media-down(lg){
+                    min-height: 60vh;
+                }
+
+                @include media-down(md){
+                    min-height: 60vh;
+                }
+            }
+
+            .bread{
+                border: 1px solid black;
+                border-radius: 500px;
+                font-size: 20px;
+                margin-top: 15px;
+                padding: 8px 20px;
+
+                @include media-down(md){
+                    max-width: fit-content;
+                }
+            }
+            
+            .top{
+                font-size: 30px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                @include media-down(md){
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    row-gap: 30px;
+                }
+                
+                a{
+                    transition: color 0.3s ease;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    text-decoration: none;
+                    color: #000;
+
+                    &.active{
+                        color: rgb(255, 208, 0);
+                        font-weight: 600;
+                    }
+
+                    &:hover{
+                        color: rgb(205, 55, 9);
+                    }
+                }
+            }
+
+            .header{
+                font-family: neue-haas-grotesk-display, sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 45px;
+                height: fit-content;
+            }
+
+            p.text{
+                font-size: 24px;
+                justify-self: flex-end;
+                width: 50%;
+
+                @include media-down(md){
+                    text-align: center;
+                    width: 100%;
+                    line-height: 160%;
+                }
+            }
+        }
+  
+        .rec{
+            
+          border-radius: 20px;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          background: rgb(255, 255, 255);
+          transition: ease-in-out 0.2s;
+          
+
+          &-header{
+            padding: 30px;
+            font-size: 30px;
+            @include media-down(lg){
+                font-size: 27px;
+            }
+          }
+          &:hover {
+            opacity: 1;
+            transform: scale(1.01);
+          }
+
+          .number-pay{
+            font-weight: 500;
+            padding: 0px 30px;
+            font-size: 50px;
+            @include media-down(lg){
+                font-size: 40px;
+            }
+
+            a{
+                transition: color 0.2s ease-in;
+                text-decoration: none;
+                color: black;
+
+                &:hover{
+                    color: rgb(255, 208, 0);
+                }
+            }
+
+            &.active{
+                color: rgb(133, 133, 133);
+            }
+          }
+    
+        }
+      }
+    }
+  }
+  
